@@ -25,7 +25,9 @@ jobs:
       with:
         environment-file: particleviz.yml
         environment-name: particleviz
-    - run: python ParticleViz.py --input_file ExampleData/Global_Marine_Debris.nc
+    - name: Run Python
+      shell: bash -l {0}
+      run: python ParticleViz.py --input_file ExampleData/Global_Marine_Debris.nc
     #- name: Use Node.js ${{ matrix.node-version }}
     #  uses: actions/setup-node@v3
     #  with:
